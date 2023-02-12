@@ -33,6 +33,9 @@ fn read_user_input() -> i32 {
             Ok(num) => num,
             Err(_) => {
                 println!("Please input only integers!");
+                // read_line() Locks this handle and reads a line of input, appending it to the specified buffer.
+                // So if you entered something invalid, it'll stay there and the parsing will fail.
+                // clear() the string before calling read_line() or create a new string every time.
                 user_input.clear();
                 continue;
             }
