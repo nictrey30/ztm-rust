@@ -10,8 +10,8 @@
 use rand::Rng;
 
 fn main() {
-    let option = rand::thread_rng().gen_bool(0.5);
-    match option {
+    let my_bool = rand::thread_rng().gen_bool(0.5);
+    match my_bool {
         true => println!("it's true"),
         false => println!("it's false"),
     }
