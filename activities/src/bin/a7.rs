@@ -99,7 +99,7 @@ fn main() {
     }
 
     println!(
-        "red appears {:.2}% times, green appears {:.2}% times, blue appears {:.2}% times",
+        "red appears {}% times, green appears {}% times, blue appears {}% times",
         return_occurance_percentage(sum_red, num_of_iterations),
         return_occurance_percentage(sum_green, num_of_iterations),
         return_occurance_percentage(sum_blue, num_of_iterations)
