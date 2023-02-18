@@ -63,7 +63,7 @@ fn main() {
     let sizes_len = Sizes::COUNT;
     let drink_flavors_len = DrinkFlavors::COUNT;
     let today_flavor = rand::thread_rng().gen_range(1..drink_flavors_len + 1);
-    let today_size = rand::thread_rng().gen_range(1..sizes_len);
+    let today_size = rand::thread_rng().gen_range(1..sizes_len + 1);
     let todays_drink = generate_drink(today_flavor, today_size);
     todays_drink.display_drink();
 }
