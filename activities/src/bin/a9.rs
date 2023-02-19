@@ -46,8 +46,8 @@ fn read_user_input() -> i32 {
 }
 
 fn generate_random() -> i32 {
-    // generate a random coord between 0.. 10
-    let rand_coord: i32 = rand::thread_rng().gen_range(0..11);
+    // generate a random coord between -10.. 10
+    let rand_coord: i32 = rand::thread_rng().gen_range(-10..11);
     rand_coord
 }
 
