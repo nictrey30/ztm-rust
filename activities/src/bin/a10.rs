@@ -29,7 +29,7 @@ fn read_user_input() -> i32 {
     }
 }
 
-fn comparison_fn(num: i32, comparison_result: bool) {
+fn print_message(num: i32, comparison_result: bool) {
     match comparison_result {
         true => println!("The number {} is lower than 100", num),
         false => println!("The number {} is greater/=than 100", num),
@@ -38,6 +38,6 @@ fn comparison_fn(num: i32, comparison_result: bool) {
 
 fn main() {
     let my_num = read_user_input();
-    let comparison_result: bool = if my_num < 100 { true } else { false };
-    comparison_fn(my_num, comparison_result);
+    let is_lower_100: bool = my_num < 100;
+    print_message(my_num, is_lower_100);
 }
