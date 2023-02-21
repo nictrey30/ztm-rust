@@ -18,7 +18,11 @@ enum Color {
 }
 
 #[derive(Debug)]
-struct Dimensions(u32, u32, u32);
+struct Dimensions {
+    width: f64,
+    height: f64,
+    length: f64,
+}
 
 #[derive(Debug)]
 struct ShippingBox {
@@ -37,16 +41,34 @@ impl ShippingBox {
     }
 
     fn print_box(&self) {
-        println!("The box: {:?}", self);
+        let volume = self.dimensions.height * self.dimensions.length * self.dimensions.width;
+        println!(
+            "A new {:?} box with a volume of {:.2} liters and a weight of {:?} kg",
+            self.color,
+            volume / 1000.0,
+            self.weight
+        );
     }
 }
 
 fn main() {
-    let box_1 = ShippingBox::create_box(22, Color::Brown, Dimensions(10, 30, 20));
+    let box_1 = ShippingBox::create_box(
+        22,
+        Color::Brown,
+        Dimensions {
+            width: 23.2,
+            height: 14.5,
+            length: 19.0,
+        },
+    );
     let box_2 = ShippingBox {
         weight: 32,
         color: Color::Black,
-        dimensions: Dimensions(10, 10, 15),
+        dimensions: Dimensions {
+            width: 11.2,
+            height: 4.5,
+            length: 8.0,
+        },
     };
     box_1.print_box();
     box_2.print_box();
