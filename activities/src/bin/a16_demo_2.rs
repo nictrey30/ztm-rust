@@ -16,4 +16,12 @@ fn main() {
         Some(answ) => println!("q1: {:?}", answ),
         None => println!("q1: no response"),
     }
+    match response.q2 {
+        Some(answ) => println!("q1: {:?}", answ),
+        None => println!("q1: no response"),
+    }
+    match response.q3 {
+        Some(answ) => println!("q1: {:?}", answ),
+        None => println!("q1: no response"),
+    }
 }
