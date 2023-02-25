@@ -29,6 +29,8 @@ fn validate_read_input() -> bool {
     }
 }
 
+fn read_locker() {}
+
 fn main() {
     let mut students: Vec<StudentLockers> = Vec::new();
 
@@ -41,7 +43,7 @@ fn main() {
         locker_no: Some(2),
     });
     students.push(StudentLockers {
-        student_name: "Djibril".to_owned(),
+        student_name: "Spoitoru".to_owned(),
         locker_no: None,
     });
 
@@ -54,21 +56,26 @@ fn main() {
         }
     }
 
-    for student in &students {
-        match student.locker_no {
-            Some(locker) => println!(
-                "{:?} has assigned locker: {:?}",
-                student.student_name, locker
-            ),
-            None => {
-                println!(
-                    "{:?} hasn't been assigned a locker yet.",
-                    student.student_name
-                );
-                println!("Do you want to assign a new locker number now? y/n");
-                let answer = validate_read_input();
-                println!("answer: {}", answer);
-            }
-        }
-    }
+    // for mut student in students {
+    //     match student.locker_no {
+    //         Some(locker) => println!(
+    //             "{:?} has assigned locker: {:?}",
+    //             student.student_name, locker
+    //         ),
+    //         None => {
+    //             println!(
+    //                 "{:?} hasn't been assigned a locker yet.",
+    //                 student.student_name
+    //             );
+    //             println!("Do you want to assign a new locker number now? y/n");
+    //             let answer = validate_read_input();
+    //             match answer {
+    //                 true => {
+    //                     student.locker_no = Some(5);
+    //                 }
+    //                 false => (),
+    //             }
+    //         }
+    //     }
+    // }
 }
